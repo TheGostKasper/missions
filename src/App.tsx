@@ -14,7 +14,7 @@ function App() {
   return (
     <LangContextProvider lang={lang}>
       <div className="container mission-wrapper ">
-        <div className="d-flex mt-5  mx-card">
+        <div className="d-flex mt-5  w-100">
           <button
             className={`btn ${lang === "en" ? "active" : "default"}`}
             onClick={() => switchLang("en")}

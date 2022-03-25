@@ -33,9 +33,8 @@ const MissionList = ({
         ...prevFeed,
         ...Utilis.groupItemsByDate([...items]),
       ]);
-
-      Utilis.updateMetaTags(items.at(-1));
     }
+    Utilis.updateMetaTags(items.at(-1));
   }, [items]);
 
   return (
