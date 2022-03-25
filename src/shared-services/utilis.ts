@@ -42,4 +42,21 @@ export class Utilis {
     });
     return groupedItems;
   };
+
+  static updateMetaTags(mission: IMission | undefined) {
+    const changeMeta = (prop: string, value: string) => {
+      document
+        .querySelector(`meta[property="og:${prop}"]`)
+        ?.setAttribute("content", value);
+      document
+        .querySelector(`meta[property="twitter:${prop}"]`)
+        ?.setAttribute("content", value);
+    };
+
+    if (!!mission) {
+      changeMeta("title", mission.title);
+      changeMeta("image", mission.image?.src || "");
+      changeMeta("video", mission.video?.src || "");
+    }
+  }
 }

@@ -33,11 +33,13 @@ const MissionList = ({
         ...prevFeed,
         ...Utilis.groupItemsByDate([...items]),
       ]);
+
+      Utilis.updateMetaTags(items.at(-1));
     }
   }, [items]);
 
   return (
-    <div className="missions-list-feed">
+    <div className="mx-card">
       {!!feed.length &&
         feed.map((gMission: IGroupedMission, indx) => (
           <div key={indx} className="mt-4">
@@ -71,9 +73,7 @@ const MissionList = ({
                   <h4 className="pb-2">{mission.title}</h4>
                   <div className="btn btn-reward ">
                     <img src={gift} alt="gift" className="icon" />
-                    <small className="bold-reward">
-                      {translateObj["RWD"]}
-                    </small>
+                    <small className="bold-reward">{translateObj["RWD"]}</small>
                     ${mission.cashReward}
                   </div>
                 </div>

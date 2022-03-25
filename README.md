@@ -20,7 +20,7 @@
         | `isInfinit` | control the displaying of children component when rendered | true |
        
         ## Usage
-        ```
+        ```jsx
         <LoadingError query={GQLQueries.GET_FEED} variables={variable}>
             {({ value }: { value: IFeesReponse }) => (
 
