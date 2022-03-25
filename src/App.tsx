@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./App.css";
-import Missions from "./missions-components/Missions";
+import Missions from "./missions-components/missions";
 import { LangContextProvider } from "./shared-components/lang-context";
 
 function App() {

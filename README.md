@@ -2,7 +2,10 @@
 
 - Listing Missions Feed where the ambassador can see the missions available for him.
 - Support translation for English and Spanish
-- Infinit S
+- Infinit Scroll loader 
+
+
+Deployed to Netlify as [dev-missions](https://dev-missions.netlify.app/)
 
 ## Run Locally 
 
@@ -21,6 +24,8 @@
        
         ## Usage
         ```jsx
+
+        // full example => Missions.tsx
         <LoadingError query={GQLQueries.GET_FEED} variables={variable}>
             {({ value }: { value: IFeesReponse }) => (
 
@@ -42,7 +47,8 @@
         // add lastElementRef to component in which will call onNextPageChange on onNextPageChange the element in the page 
 
         const lastElementRef = UseScrollLoader({ hasNext, onNextPageChange });
-
+        ...
+        // For example => mission-list.tsx 
 
         ```
 
