@@ -1,25 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
+import Missions from "./missions-components/Missions";
+import { LangContextProvider } from "./shared-components/lang-context";
 
 function App() {
+  const [lang, setLang] = useState("en");
+  const switchLang = (lng: string) => {
+    if (lng !== lang) {
+      setLang(lng);
+    }
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <LangContextProvider lang={lang}>
+      <div className="container mission-wrapper">
+        <div className="d-flex mt-5 w-100">
+          <button
+            className={`btn ${lang === "en" ? "active" : "default"}`}
+            onClick={() => switchLang("en")}
+          >
+            English
+          </button>
+          <button
+            className={`btn ml-4 ${lang === "es" ? "active" : "default"}`}
+            onClick={() => switchLang("es")}
+          >
+            Spanish
+          </button>
+        </div>
+        <Missions />
+      </div>
+    </LangContextProvider>
   );
 }
 
