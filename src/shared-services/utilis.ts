@@ -43,21 +43,28 @@ export class Utilis {
     return groupedItems;
   };
 
-  static changeMeta = (prop: string, value: string) => {
-    document
-      .querySelector(`meta[property="og:${prop}"]`)
-      ?.setAttribute("content", value);
-    document
-      .querySelector(`meta[property="twitter:${prop}"]`)
-      ?.setAttribute("content", value);
+  static addOrUpdateMetaTag(prop: string, val: string) {
+    const metaEle = document.querySelector(`meta[property="${prop}"]`);
+    if (!!metaEle) metaEle.setAttribute("content", val);
+    else {
+      const meta = document.createElement("meta");
+      meta.name = prop;
+      meta.content = val;
+      document.head.appendChild(meta);
+    }
+  }
+  static addSocialMeta = (prop: string, value: string) => {
+    this.addOrUpdateMetaTag(`og:${prop}`, value);
+    this.addOrUpdateMetaTag(`twitter:${prop}`, value);
   };
 
-  static updateMetaTags(mission: IMission | undefined) {
+  static updateMissionMetaTags(mission: IMission | undefined) {
     if (!!mission) {
       document.title = mission.title;
-      this.changeMeta("title", mission.title);
-      this.changeMeta("image", mission.image?.src || "");
-      this.changeMeta("video", mission.video?.src || "");
+      this.addSocialMeta("title", mission.title);
+      this.addSocialMeta("description", mission.title);
+      this.addSocialMeta("image", mission.image?.src || "");
+      this.addSocialMeta("video", mission.video?.src || "");
     }
   }
 }
