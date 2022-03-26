@@ -5,9 +5,9 @@ import {
   IMissionListProp,
 } from "./modals/mission-modal";
 
-import UseScrollLoader from "../shared-components/scroll-loader";
-import { useLangContext } from "../shared-components/lang-context";
-import { Utilis } from "../shared-services/utilis";
+import UseScrollLoader from "../../shared-components/scroll-loader";
+import { useLangContext } from "../../shared-components/lang-context";
+import { Utilis } from "../../shared-services/utilis";
 import Mission from "./mission";
 
 const MissionList = ({

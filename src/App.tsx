@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./App.css";
-import Missions from "./missions-components/missions";
+import Missions from "./components/missions-components/missions";
+import TranslateComponent from "./components/translate-component";
 import { LangContextProvider } from "./shared-components/lang-context";
 
 function App() {
@@ -14,20 +15,7 @@ function App() {
   return (
     <LangContextProvider lang={lang}>
       <div className="container mission-wrapper ">
-        <div className="d-flex mt-5  w-100">
-          <button
-            className={`btn ${lang === "en" ? "active" : "default"}`}
-            onClick={() => switchLang("en")}
-          >
-            English
-          </button>
-          <button
-            className={`btn ml-4 ${lang === "es" ? "active" : "default"}`}
-            onClick={() => switchLang("es")}
-          >
-            Spanish
-          </button>
-        </div>
+        <TranslateComponent lang={lang} switchLang={switchLang} />
         <Missions />
       </div>
     </LangContextProvider>

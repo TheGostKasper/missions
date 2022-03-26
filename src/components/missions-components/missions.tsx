@@ -1,6 +1,6 @@
 import { useState } from "react";
-import LoadingError from "../shared-components/loading-error";
-import { GQLQueries } from "../shared-services/gqlQueries";
+import LoadingError from "../../shared-components/loading-error";
+import { GQLQueries } from "../../shared-services/gqlQueries";
 import { IFeesReponse } from "./modals/mission-modal";
 import MissionList from "./mission-list";
 

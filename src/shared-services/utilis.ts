@@ -1,7 +1,7 @@
 import {
   IGroupedMission,
   IMission,
-} from "../missions-components/modals/mission-modal";
+} from "../components/missions-components/modals/mission-modal";
 
 export class Utilis {
   static getDateFormate(date: string): string {

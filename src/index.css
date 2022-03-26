@@ -40,6 +40,7 @@ body {
   top: 8px;
   right: 8px;
   background: rgba(255, 255, 255, 0.8);
+  padding: 4px 8px;
   /* backdrop-filter: blur(20px); */
   border-radius: 8px;
   display: flex;
@@ -64,7 +65,7 @@ body {
 button.active {
   background: #a8caff;
   border-radius: 8px;
-  box-shadow:none !important
+  box-shadow: none !important;
 }
 button.default {
   background: #f5f5f7;
@@ -74,13 +75,16 @@ button.default {
 .bold-reward {
   font-weight: 700;
   font-size: 14px;
-  margin-right:4px ;
+  margin-right: 4px;
 }
 
 .mission h4 {
   font-weight: 400;
 }
 
-.ml-4{
-  margin-left: 12px;
+.ml-4 {
+  margin-left: 8px;
+}
+.mr-4 {
+  margin-right: 8px;
 }
