@@ -21,9 +21,12 @@ const MissionList = ({
 
   useEffect(() => {
     if (!!items && items.length > 0) {
-      setFeed((prevFeed) => [...prevFeed, ...Utilis.groupItemsByDate([...items])]);
+      setFeed((prevFeed) => [
+        ...prevFeed,
+        ...Utilis.groupItemsByDate([...items]),
+      ]);
     }
-    Utilis.updateMissionMetaTags(items.at(-1));
+    Utilis.updateMissionMetaTags(items[items.length - 1]);
   }, [items]);
 
   return (
